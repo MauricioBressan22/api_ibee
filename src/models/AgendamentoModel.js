@@ -55,7 +55,7 @@ exports.agendaMedicamento = async function agendaMedicamento(
     medida: medida,
   };
 
-  criaLembrete(dadosAgendamento); //rotina lembrete
+  await criaLembrete(dadosAgendamento); //rotina lembrete
 };
 
 async function criaLembrete(dadosAgendamento) {
@@ -133,7 +133,7 @@ async function criaLembrete(dadosAgendamento) {
 
         //atualiza data do próximo lembrete
         await Paciente.atualizaData(pacienteId, medicamentoId, dtProxLembrete);
-        criaLembrete(dadosAgendamento); //recria lembrete
+        await criaLembrete(dadosAgendamento); //recria lembrete
 
         return;
       }

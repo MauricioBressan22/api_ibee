@@ -25,7 +25,7 @@ exports.postMedicamento = async (req, res) => {
           via: medicamento.via,
           medida: medicamento.medida,
         };
-        agendaMedicamento(pacienteId, dadosMedicamento);
+        await agendaMedicamento(pacienteId, dadosMedicamento);
       }
     }
   } catch (err) {
